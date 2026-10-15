@@ -21,9 +21,9 @@ jobs:
       - name: Check out the repository
         uses: actions/checkout@v4
 
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-
+      # The site base path is fixed in scripts/build.py. actions/configure-pages
+      # is not used: it stops the job when Pages has not been switched to
+      # GitHub Actions yet, which would skip validation of the oracle files.
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
