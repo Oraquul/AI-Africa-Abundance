@@ -1,0 +1,22 @@
+{% extends "base.html.j2" %}
+{% block main %}
+<p class="kicker"><a href="{{ url('/blog/') }}">Blog</a></p>
+<h1>{{ author.name }}</h1>
+<div class="prose">
+  <p>This page lists essays whose author opted in to a byline. Credit is never added without that choice.</p>
+  {% if author.slug == "benedict-itegbe" %}
+  <p><a href="{{ url('/about/') }}">About the editor</a></p>
+  {% endif %}
+</div>
+<ul class="entry-list">
+  {% for post in author.posts %}
+  <li>
+    <article>
+      <h2><a href="{{ url('/blog/' ~ post.slug ~ '/') }}">{{ post.title }}</a></h2>
+      <p class="meta"><time datetime="{{ post.date }}">{{ post.date }}</time></p>
+      <p>{{ post.summary }}</p>
+    </article>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}

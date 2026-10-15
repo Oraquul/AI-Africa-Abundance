@@ -1,0 +1,13 @@
+id: agriculture-post-harvest-loss
+name: Post-harvest loss prediction and intervention selection
+domain: Agriculture
+layer: benchmark
+feedback_loop_speed: Weeks (section 20.1)
+status: proposed
+leads: []
+working_group: null
+milestones: []
+evidence: []
+dataset_licence: Unassigned
+paper_section: Annex A
+note: Annex A marks this family as an explicit gap in recent literature.

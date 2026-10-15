@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://oraquul.github.io/AI-Africa-Abundance/schema/oracle.schema.json",
+  "title": "Oracle",
+  "description": "One proposed or recorded oracle for the AI Africa Abundance tracker. An oracle scores a proposed solution without a person in the loop. Layers follow the paper: benchmark, data, laboratory, field network, and simulator (a digital twin, named as an oracle form in section 17). Do not invent leads, dates, evidence, or dataset licences.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "name",
+    "domain",
+    "layer",
+    "feedback_loop_speed",
+    "status",
+    "leads",
+    "working_group",
+    "milestones",
+    "evidence",
+    "dataset_licence",
+    "paper_section"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "Stable identifier. The filename must be <id>.yml."
+    },
+    "name": {
+      "type": "string",
+      "minLength": 3
+    },
+    "domain": {
+      "type": "string",
+      "minLength": 2
+    },
+    "layer": {
+      "type": "string",
+      "enum": ["benchmark", "data", "lab", "field", "simulator"]
+    },
+    "feedback_loop_speed": {
+      "type": "string",
+      "minLength": 1,
+      "description": "How fast the paper says this loop can close. If the paper gives no figure, say so. Do not invent a latency."
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "proposed",
+        "specified",
+        "data-sourcing",
+        "prototype",
+        "published",
+        "leaderboard-live",
+        "retired"
+      ]
+    },
+    "leads": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "description": "Names of people who have agreed to be credited as leads. Leave empty until someone opts in."
+    },
+    "working_group": {
+      "anyOf": [
+        { "type": "null" },
+        { "type": "string", "minLength": 1 }
+      ]
+    },
+    "milestones": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["date", "item"],
+        "properties": {
+          "date": { "type": "string", "format": "date" },
+          "item": { "type": "string", "minLength": 1 },
+          "done": { "type": "boolean" }
+        }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["label", "url"],
+        "properties": {
+          "label": { "type": "string", "minLength": 1 },
+          "url": { "type": "string", "minLength": 8 },
+          "date": { "type": "string", "format": "date" }
+        }
+      }
+    },
+    "dataset_licence": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Licence of an attached dataset. Use Unassigned when no dataset exists. The project spells licence this way."
+    },
+    "paper_section": {
+      "type": "string",
+      "minLength": 1
+    },
+    "note": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Optional clarification taken from the paper. Do not add claims the paper does not make."
+    }
+  }
+}

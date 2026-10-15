@@ -1,0 +1,37 @@
+Creative Commons Attribution 4.0 International
+
+The white paper, blog posts, research notes, progress log, oracle descriptions,
+and other text and data in this repository are licensed under the Creative
+Commons Attribution 4.0 International License (CC BY 4.0).
+
+https://creativecommons.org/licenses/by/4.0/
+
+The legal code of that licence is at:
+
+https://creativecommons.org/licenses/by/4.0/legalcode
+
+and is incorporated here by reference.
+
+You are free to share and adapt the material for any purpose, even
+commercially, under the following terms:
+
+- Attribution. You must give appropriate credit, provide a link to the
+  licence, and indicate if changes were made. You may do so in any reasonable
+  manner, but not in any way that suggests the licensor endorses you or your
+  use.
+- No additional restrictions. You may not apply legal terms or technological
+  measures that legally restrict others from doing anything the licence
+  permits.
+
+Code in this repository is not covered by this file. It is licensed under the
+MIT License. See the file LICENSE.
+
+A dataset attached to an oracle keeps the licence named in that oracle's file.
+"Unassigned" means no dataset has been attached and no dataset licence has
+been chosen.
+
+Suggested credit for the white paper:
+
+Itegbe, Benedict. 2026. The Oracle and the Partner: Africa's Path to an Age
+of Abundance. Version 3.1, July 2026. AI Africa Abundance.
+https://oraquul.github.io/AI-Africa-Abundance/paper/

@@ -1,0 +1,38 @@
+name: Pitch a blog post
+description: Propose an essay for the blog.
+title: "Blog pitch: "
+labels: ["blog"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Essays are formal and sourced. A pitch is not a promise of publication. Do not send confidential material.
+  - type: input
+    id: title
+    attributes:
+      label: Working title
+    validations:
+      required: true
+  - type: input
+    id: paper_section
+    attributes:
+      label: Paper section
+      description: The section the essay would draw on.
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: What the essay argues
+      description: A short account of the claim, and of any figure you would use and where it comes from.
+    validations:
+      required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Terms
+      options:
+        - label: I am free to publish this, and I agree that an accepted essay may appear under CC BY 4.0.
+          required: true
+        - label: I opt in to a byline if the essay is published.
+          required: false

@@ -1,0 +1,12 @@
+id: health-malaria-tb-microscopy
+name: Malaria and tuberculosis identification from low-cost microscopy
+domain: Health
+layer: benchmark
+feedback_loop_speed: Seconds
+status: proposed
+leads: []
+working_group: null
+milestones: []
+evidence: []
+dataset_licence: Unassigned
+paper_section: Annex A

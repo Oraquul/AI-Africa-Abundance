@@ -1,0 +1,66 @@
+{% extends "base.html.j2" %}
+{% block main %}
+<p class="kicker"><a href="{{ url('/oracles/') }}">Oracle tracker</a> · {{ oracle.domain }}</p>
+<h1>{{ oracle.name }}</h1>
+<dl class="record">
+  <div><dt>Identifier</dt><dd><code>{{ oracle.id }}</code></dd></div>
+  <div><dt>Domain</dt><dd>{{ oracle.domain }}</dd></div>
+  <div><dt>Form</dt><dd>{{ oracle.layer_label }} <span class="meta">({{ oracle.layer }})</span></dd></div>
+  <div><dt>Feedback-loop speed</dt><dd>{{ oracle.feedback_loop_speed }}</dd></div>
+  <div><dt>Status</dt><dd>{{ oracle.status_label }}</dd></div>
+  <div>
+    <dt>Leads</dt>
+    <dd>{% if oracle.leads %}{{ oracle.leads | join(", ") }}{% else %}No lead is named. A name is added only when that person opts in.{% endif %}</dd>
+  </div>
+  <div>
+    <dt>Working group</dt>
+    <dd>{% if oracle.working_group %}{{ oracle.working_group }}{% else %}Not constituted.{% endif %}</dd>
+  </div>
+  <div>
+    <dt>Milestones</dt>
+    <dd>
+      {% if oracle.milestones %}
+      <ul>
+        {% for milestone in oracle.milestones %}
+        <li><time datetime="{{ milestone.date }}">{{ milestone.date }}</time> — {{ milestone.item }}{% if milestone.done %} (done){% endif %}</li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      No milestones are recorded. A date is added only when it can be pointed to.
+      {% endif %}
+    </dd>
+  </div>
+  <div>
+    <dt>Evidence</dt>
+    <dd>
+      {% if oracle.evidence %}
+      <ul>
+        {% for item in oracle.evidence %}
+        <li><a href="{{ item.url }}">{{ item.label }}</a>{% if item.date %} (<time datetime="{{ item.date }}">{{ item.date }}</time>){% endif %}</li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      No evidence links have been added.
+      {% endif %}
+    </dd>
+  </div>
+  <div><dt>Dataset licence</dt><dd>{{ oracle.dataset_licence }}</dd></div>
+  <div>
+    <dt>Paper</dt>
+    <dd>
+      {{ oracle.paper_section }}
+      {% if oracle.links %}
+      <ul>
+        {% for link in oracle.links %}
+        <li><a href="{{ url(link.href) }}">{{ link.label }}</a></li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </dd>
+  </div>
+  {% if oracle.note %}
+  <div><dt>Note from the paper</dt><dd>{{ oracle.note }}</dd></div>
+  {% endif %}
+</dl>
+<p class="plain-links"><a href="{{ repo }}/blob/main/data/oracles/{{ oracle.id }}.yml">Edit the source file</a> · <a href="{{ repo }}/issues/new?template=update-oracle.yml&amp;title={{ ('Status update: ' ~ oracle.id) | urlencode }}&amp;oracle_id={{ oracle.id | urlencode }}">Update the status</a></p>
+{% endblock %}

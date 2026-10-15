@@ -1,0 +1,27 @@
+{% extends "base.html.j2" %}
+{% block main %}
+<p class="kicker">The project</p>
+<h1>About</h1>
+<div class="prose">
+  <h2>Founder and editor</h2>
+  <p>Benedict Itegbe is the founder and editor of AI Africa Abundance, and the author of the white paper <em>The Oracle and the Partner</em> (version 3.1, July 2026). He writes here in a personal capacity.</p>
+
+  <h2>Independence</h2>
+  <p>This is an independent personal initiative. The views expressed are his own. They are not official positions of the Nigerian Export Promotion Council or any other institution.</p>
+  <p>The site is a public copy of the paper, a tracker of proposed oracles, a progress log, and a place for essays and research notes. It is not the continental benchmark authority, the data commons, or the laboratories described in the paper. Those remain proposals. The site does not speak for the African Union, a member state, or a company.</p>
+
+  <h2>Governance</h2>
+  <p>The editor reviews changes to this repository. Leads and working-group reviewers are recorded in an oracle file only when someone is doing the work and has opted in to being named. The paper’s design — a thin coordinating function, working groups with practitioner majorities, held-out tests, and community rights over field data — is an argument about institutions. It is not a description of bodies this website has created. Participation is set out on the <a href="{{ url('/contribute/') }}">contribute page</a>, under the <a href="{{ url('/conduct/') }}">code of conduct</a>.</p>
+
+  <h2>Licences</h2>
+  <p>The white paper, essays, research notes, progress log, and oracle descriptions and data are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International</a>. You may share and adapt them, including commercially, if you give appropriate credit, link to the licence, and indicate changes. The licence text used by this project is in <a href="{{ repo }}/blob/main/LICENSE-CC-BY-4.0">LICENSE-CC-BY-4.0</a>.</p>
+  <p>Code, including the site generator, styles, and schema, is licensed under the <a href="{{ repo }}/blob/main/LICENSE">MIT License</a>.</p>
+  <p>A dataset attached to an oracle keeps the licence written in that oracle’s file. <em>Unassigned</em> means no dataset has been attached.</p>
+
+  <h2>Companion</h2>
+  <p>The companion blog is the <a href="https://oraquul.github.io/Public-service-ai-observatory/">Public Service AI Observatory</a>.</p>
+
+  <h2 id="contact">Contact</h2>
+</div>
+{% include "form.html.j2" %}
+{% endblock %}

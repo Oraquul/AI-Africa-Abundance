@@ -1,0 +1,12 @@
+id: language-speech-recognition
+name: Speech recognition across priority African languages
+domain: Language and access
+layer: benchmark
+feedback_loop_speed: Seconds, on labelled data (section 20.3)
+status: proposed
+leads: []
+working_group: null
+milestones: []
+evidence: []
+dataset_licence: Unassigned
+paper_section: Annex A

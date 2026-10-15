@@ -1,0 +1,46 @@
+{% extends "base.html.j2" %}
+{% block main %}
+<p class="kicker">Open work</p>
+<h1>Contribute</h1>
+<div class="prose">
+  <p>The paper, the oracle files, the progress log, and the essays are edited in public. You can use GitHub, or the form at the bottom of this page if you do not have an account.</p>
+  <p>Full instructions for the repository are in <a href="{{ url('/contributing/') }}">Contributing</a>. Behaviour in this project is covered by the <a href="{{ url('/conduct/') }}">code of conduct</a> (Contributor Covenant 2.1).</p>
+
+  <h2>Credit is opt-in</h2>
+  <p>You are named only if you say so. Leave the credit box unchecked on a form, an issue, or a pull request, and the editor will not add your name to a byline, an oracle lead list, or a working group. Opting in does not guarantee that a contribution will be accepted.</p>
+
+  <h2>Roles</h2>
+  <p>These are ways to take part in the repository. They are not offices, and none of the institutional bodies described in the paper has been created by the existence of this site.</p>
+  <ul>
+    <li><strong>Reader.</strong> Read the paper and the tracker.</li>
+    <li><strong>Commenter.</strong> Open an issue, or use the form, to correct a passage or ask a question.</li>
+    <li><strong>Domain contributor.</strong> Propose or tighten a task specification, a dataset record, or a milestone, in a pull request.</li>
+    <li><strong>Oracle lead.</strong> Named in an oracle file only after agreeing to be credited.</li>
+    <li><strong>Working-group reviewer.</strong> Named in the same way, only with consent.</li>
+    <li><strong>Editor.</strong> Benedict Itegbe reviews what is published. He does so in a personal capacity.</li>
+  </ul>
+
+  <h2>GitHub issues</h2>
+  <p>Choose a form: <a href="{{ repo }}/issues/new/choose">open a new issue</a>. Issues labelled <a href="{{ repo }}/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22">good first issue</a> are a reasonable place to start when any are open.</p>
+  <ul>
+    <li><a href="{{ repo }}/issues/new?template=propose-oracle.yml">Propose an oracle</a></li>
+    <li><a href="{{ repo }}/issues/new?template=update-oracle.yml">Update an oracle status</a></li>
+    <li><a href="{{ repo }}/issues/new?template=correct-paper.yml">Correct the paper</a></li>
+    <li><a href="{{ repo }}/issues/new?template=submit-research.yml" id="research">Submit research</a></li>
+    <li><a href="{{ repo }}/issues/new?template=pitch-blog.yml" id="blog">Pitch a blog post</a></li>
+  </ul>
+  <p>A correction link on each section of the paper opens the correction form with that section filled in.</p>
+
+  <h2>What a pull request should contain</h2>
+  <ul>
+    <li>An oracle change is one YAML file in <code>data/oracles/</code>. The build checks it against <code>data/schema/oracle.schema.json</code>.</li>
+    <li>A progress entry is one Markdown file in <code>data/progress/</code>. The <code>x</code> field must be 280 characters or fewer.</li>
+    <li>An essay or a research note is a Markdown file under <code>content/blog/</code> or <code>content/research/</code>. Files whose names start with an underscore are templates and are not published.</li>
+    <li>Do not add a lead, a date, or a figure you cannot point to. Dataset licences stay <code>Unassigned</code> until a dataset exists.</li>
+  </ul>
+  <p>The pull request template asks you to opt in if you want to be named. The template is <a href="{{ repo }}/blob/main/.github/PULL_REQUEST_TEMPLATE.md">in the repository</a>.</p>
+
+  <h2 id="contact">No GitHub account</h2>
+</div>
+{% include "form.html.j2" %}
+{% endblock %}

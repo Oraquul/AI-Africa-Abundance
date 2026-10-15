@@ -1,0 +1,44 @@
+{% extends "base.html.j2" %}
+{% block main %}
+<p class="kicker">White paper · version 3.1 · July 2026</p>
+<div class="prose">
+  {{ title_html }}
+  <p>This is the verified master text. Each chapter and annex is a separate page. The downloadable PDF is generated from the same file when the site is built.</p>
+</div>
+<div class="actions">
+  <a class="button" href="{{ url('/paper/the-oracle-and-the-partner-v3.1.pdf') }}">Download PDF</a>
+  <a class="button secondary" href="{{ url('/paper/versions/') }}">Version history and errata</a>
+  <a class="button secondary" href="{{ sections[0].correction }}">Suggest a correction</a>
+</div>
+
+<section class="citation" aria-labelledby="cite-heading">
+  <h2 id="cite-heading">Citation</h2>
+  <p>{{ citation }}</p>
+  <p>To cite a chapter, add the section number and title. Example: Section 17, “The Binding Constraint Is the Oracle.”</p>
+  <pre class="bib" id="bibtex">{{ bibtex }}</pre>
+  <button type="button" data-copy-target="bibtex" data-copy-label="BibTeX citation">Copy BibTeX</button>
+  <p id="copy-status" class="meta" aria-live="polite"></p>
+</section>
+
+<nav class="toc prose" aria-labelledby="toc-heading">
+  <h2 id="toc-heading">Contents</h2>
+  {% set ns = namespace(part="") %}
+  <ol>
+    {% for section in sections %}
+      {% if section.part != ns.part %}
+        {% if ns.part %}
+          </ol></li>
+        {% endif %}
+        <li><strong>{{ section.part }}</strong>
+          <ol>
+        {% set ns.part = section.part %}
+      {% endif %}
+      <li><a href="{{ url('/paper/' ~ section.slug ~ '/') }}">{{ section.heading }}</a></li>
+    {% endfor %}
+    {% if ns.part %}
+          </ol></li>
+    {% endif %}
+  </ol>
+  <p>Annex F is printed before Annex E in the paper, and the contents follow that order. The version record is on <a href="{{ url('/paper/versions/') }}">a separate page</a>.</p>
+</nav>
+{% endblock %}

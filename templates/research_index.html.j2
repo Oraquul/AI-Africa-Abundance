@@ -1,0 +1,21 @@
+{% extends "base.html.j2" %}
+{% block main %}
+<p class="kicker">Notes</p>
+<h1>Research</h1>
+<div class="prose">
+  <p>Concept notes, preprints, and dataset records live here as Markdown. A page marked <strong>planned</strong> has not been written. It is a placeholder for work the white paper already describes, not a finished study and not a funding commitment.</p>
+  <p>The paper’s references are <a href="{{ url('/paper/annex-d/') }}">Annex D</a>. Quantitative claims and their sources are collected in <a href="{{ url('/paper/annex-c/') }}">Annex C</a>. This page does not restate those figures.</p>
+</div>
+<ul class="entry-list">
+  {% for note in notes %}
+  <li>
+    <article>
+      <h2><a href="{{ url('/research/' ~ note.slug ~ '/') }}">{{ note.title }}</a></h2>
+      <p class="meta">{{ note.status | capitalize }}{% if note.paper_section %} · {{ note.paper_section }}{% endif %}</p>
+      <p>{{ note.summary }}</p>
+    </article>
+  </li>
+  {% endfor %}
+</ul>
+<p class="plain-links"><a href="{{ url('/contribute/#research') }}">Submit research</a>. Template: <a href="{{ repo }}/blob/main/content/research/_template.md">content/research/_template.md</a>.</p>
+{% endblock %}

@@ -1,0 +1,12 @@
+id: logistics-multimodal-freight-routing
+name: Multi-modal freight routing under real infrastructure reliability constraints
+domain: Logistics and trade
+layer: benchmark
+feedback_loop_speed: Seconds–minutes
+status: proposed
+leads: []
+working_group: null
+milestones: []
+evidence: []
+dataset_licence: Unassigned
+paper_section: Annex A

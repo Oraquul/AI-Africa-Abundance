@@ -1,0 +1,12 @@
+id: agriculture-yield-prediction
+name: Yield prediction from remote sensing and weather reanalysis
+domain: Agriculture
+layer: benchmark
+feedback_loop_speed: Scored against harvest records (section 20.1)
+status: proposed
+leads: []
+working_group: null
+milestones: []
+evidence: []
+dataset_licence: Unassigned
+paper_section: Annex A

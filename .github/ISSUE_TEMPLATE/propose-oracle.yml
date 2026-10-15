@@ -1,0 +1,83 @@
+name: Propose an oracle
+description: Propose a benchmark, dataset, laboratory, field network, or simulator for the tracker.
+title: "Oracle proposal: "
+labels: ["oracle"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        An oracle scores a proposed solution without a person in the loop. Read section 17 of the white paper before proposing one. Do not invent a lead, a date, or a dataset licence.
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      description: A short name for the task family or infrastructure item.
+      placeholder: Irrigation scheduling from soil moisture telemetry
+    validations:
+      required: true
+  - type: dropdown
+    id: domain
+    attributes:
+      label: Domain
+      options:
+        - Logistics and trade
+        - Connectivity
+        - Energy
+        - Housing and built environment
+        - Health
+        - Agriculture
+        - Environment
+        - Language and access
+        - Other (describe it in the rationale)
+    validations:
+      required: true
+  - type: dropdown
+    id: layer
+    attributes:
+      label: Form
+      description: Benchmark, data, laboratory, field network, or simulator (a digital twin).
+      options:
+        - benchmark
+        - data
+        - lab
+        - field
+        - simulator
+    validations:
+      required: true
+  - type: input
+    id: feedback_loop_speed
+    attributes:
+      label: Feedback-loop speed
+      description: How fast a proposal can be scored. If you do not know, write "not stated".
+    validations:
+      required: true
+  - type: input
+    id: paper_section
+    attributes:
+      label: Paper section
+      description: The section or annex this extends. Write "not in the paper" if it is new.
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Why this is an oracle
+      description: What is scored, by what mechanism, and why a person does not have to be in the loop.
+    validations:
+      required: true
+  - type: input
+    id: dataset_licence
+    attributes:
+      label: Dataset licence
+      description: Leave this as Unassigned if no dataset exists yet.
+      value: Unassigned
+    validations:
+      required: true
+  - type: checkboxes
+    id: credit
+    attributes:
+      label: Credit
+      description: Contributors are credited only if they opt in.
+      options:
+        - label: I opt in to being credited by name if this proposal is accepted.
+          required: false

@@ -1,0 +1,39 @@
+name: Correct the paper
+description: Propose a correction to a section of The Oracle and the Partner.
+title: "Correction: "
+labels: ["paper"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Quote the passage and say what should replace it. If the correction is to a figure, cite the primary publisher. The reading text is version 3.1.
+  - type: input
+    id: section
+    attributes:
+      label: Section
+      description: Chapter, annex, or heading.
+      placeholder: 17. The Binding Constraint Is the Oracle
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Proposed correction
+      description: Quote the current text, then state the replacement.
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Source
+      description: Primary source, if the correction concerns a fact or a figure. Optional for wording.
+    validations:
+      required: false
+  - type: checkboxes
+    id: credit
+    attributes:
+      label: Credit
+      description: Contributors are credited only if they opt in.
+      options:
+        - label: I opt in to being credited by name if this correction is accepted.
+          required: false

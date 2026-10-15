@@ -1,0 +1,12 @@
+id: health-chest-radiograph
+name: Chest radiograph interpretation on African clinical populations
+domain: Health
+layer: benchmark
+feedback_loop_speed: Seconds
+status: proposed
+leads: []
+working_group: null
+milestones: []
+evidence: []
+dataset_licence: Unassigned
+paper_section: Annex A

@@ -1,0 +1,25 @@
+{% extends "base.html.j2" %}
+{% block main %}
+<p class="kicker">Copy, then post yourself</p>
+<h1>Share</h1>
+<div class="prose">
+  <p>Each progress entry has text ready for X and for LinkedIn. Copy it, then post it from your own account if you choose to. This site does not send anything to either service.</p>
+  <p>The X field is limited to 280 characters and the build rejects a longer one. The count shown here is the number of characters in the text, including spaces and the link.</p>
+</div>
+<p id="copy-status" class="meta" aria-live="polite"></p>
+{% for entry in entries %}
+<article id="{{ entry.slug }}" class="card">
+  <h2>{{ entry.title }}</h2>
+  <p class="meta"><time datetime="{{ entry.date }}">{{ entry.date }}</time> · <a href="{{ url('/progress/') }}#{{ entry.slug }}">Progress entry</a></p>
+  <h3>X</h3>
+  <pre class="snippet" id="x-{{ entry.slug }}">{{ entry.x }}</pre>
+  <button type="button" data-copy-target="x-{{ entry.slug }}" data-copy-label="X text for {{ entry.title }}">Copy X text</button>
+  <p class="meta">{{ entry.x | length }} characters. The limit is 280.</p>
+  <h3>LinkedIn</h3>
+  <pre class="snippet" id="li-{{ entry.slug }}">{{ entry.linkedin }}</pre>
+  <button type="button" data-copy-target="li-{{ entry.slug }}" data-copy-label="LinkedIn text for {{ entry.title }}">Copy LinkedIn text</button>
+</article>
+{% else %}
+<p>No notes are ready to copy.</p>
+{% endfor %}
+{% endblock %}

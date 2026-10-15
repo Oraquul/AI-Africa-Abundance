@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>AI Africa Abundance — Progress</title>
+    <link>{{ absurl('/') }}</link>
+    <description>Dated public notes from AI Africa Abundance. The site does not post these notes to X or LinkedIn.</description>
+    <language>en</language>
+    <lastBuildDate>{{ built }}</lastBuildDate>
+    <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="{{ absurl('/feed.xml') }}" rel="self" type="application/rss+xml"/>
+    {% for entry in entries %}
+    <item>
+      <title>{{ entry.title }}</title>
+      <link>{{ absurl('/progress/') }}#{{ entry.slug }}</link>
+      <guid isPermaLink="true">{{ absurl('/progress/') }}#{{ entry.slug }}</guid>
+      <pubDate>{{ entry.rfc822 }}</pubDate>
+      <description>{{ entry.summary }}</description>
+    </item>
+    {% endfor %}
+  </channel>
+</rss>

@@ -1,0 +1,30 @@
+<form class="contact-form" action="https://formspree.io/f/mvkzbdqq" method="post">
+  <p>If you do not have a GitHub account, use this form. It is delivered by Formspree. Do not include confidential information, passwords, or documents you are not free to share.</p>
+  <label for="contact-name">Name (required)</label>
+  <input id="contact-name" name="name" type="text" autocomplete="name" required>
+  <label for="contact-email">Email (required)</label>
+  <input id="contact-email" name="email" type="email" autocomplete="email" required>
+  <label for="contact-topic">Topic (required)</label>
+  <select id="contact-topic" name="topic" required>
+    <option value="">Choose one</option>
+    <option>Propose an oracle</option>
+    <option>Update an oracle status</option>
+    <option>Correct the paper</option>
+    <option>Submit research</option>
+    <option>Pitch a blog post</option>
+    <option>Code of conduct report</option>
+    <option>Other</option>
+  </select>
+  <label for="contact-message">Message (required)</label>
+  <textarea id="contact-message" name="message" required></textarea>
+  <label class="check" for="credit-opt-in">
+    <input id="credit-opt-in" name="credit_opt_in" type="checkbox" value="yes">
+    <span>I opt in to being credited by name if this contribution is used. Leave this unchecked and you will not be named.</span>
+  </label>
+  <p class="hp" aria-hidden="true">
+    <label for="contact-gotcha">Leave this field empty</label>
+    <input id="contact-gotcha" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+  </p>
+  <input type="hidden" name="_subject" value="AI Africa Abundance">
+  <button type="submit">Send</button>
+</form>

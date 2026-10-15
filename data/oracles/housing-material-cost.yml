@@ -1,0 +1,12 @@
+id: housing-material-cost
+name: Material quantity and cost minimisation subject to performance floors
+domain: Housing and built environment
+layer: benchmark
+feedback_loop_speed: Minutes–hours
+status: proposed
+leads: []
+working_group: null
+milestones: []
+evidence: []
+dataset_licence: Unassigned
+paper_section: Annex A

@@ -1,0 +1,12 @@
+id: environment-carbon-stock
+name: Carbon stock estimation for verified crediting
+domain: Environment
+layer: benchmark
+feedback_loop_speed: Days–weeks
+status: proposed
+leads: []
+working_group: null
+milestones: []
+evidence: []
+dataset_licence: Unassigned
+paper_section: Annex A

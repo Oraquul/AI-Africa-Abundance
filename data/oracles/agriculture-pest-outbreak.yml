@@ -1,0 +1,13 @@
+id: agriculture-pest-outbreak
+name: Pest outbreak forecasting
+domain: Agriculture
+layer: benchmark
+feedback_loop_speed: Not given separately from the agriculture row (weeks–seasons,
+  section 18). Section 20.1 treats pest identification from images as fast.
+status: proposed
+leads: []
+working_group: null
+milestones: []
+evidence: []
+dataset_licence: Unassigned
+paper_section: Annex A

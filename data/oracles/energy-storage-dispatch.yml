@@ -1,0 +1,12 @@
+id: energy-storage-dispatch
+name: Degradation-aware storage dispatch
+domain: Energy
+layer: benchmark
+feedback_loop_speed: Minutes–days
+status: proposed
+leads: []
+working_group: null
+milestones: []
+evidence: []
+dataset_licence: Unassigned
+paper_section: Annex A

@@ -1,0 +1,12 @@
+{% extends "base.html.j2" %}
+{% block main %}
+<h1>Page not found</h1>
+<div class="prose">
+  <p>That address is not on this site.</p>
+  <ul>
+    <li><a href="{{ url('/') }}">Home</a></li>
+    <li><a href="{{ url('/paper/') }}">White paper</a></li>
+    <li><a href="{{ url('/oracles/') }}">Oracle tracker</a></li>
+  </ul>
+</div>
+{% endblock %}

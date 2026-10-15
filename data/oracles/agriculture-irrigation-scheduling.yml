@@ -1,0 +1,12 @@
+id: agriculture-irrigation-scheduling
+name: Irrigation scheduling from soil moisture telemetry
+domain: Agriculture
+layer: benchmark
+feedback_loop_speed: Days (section 20.1)
+status: proposed
+leads: []
+working_group: null
+milestones: []
+evidence: []
+dataset_licence: Unassigned
+paper_section: Annex A

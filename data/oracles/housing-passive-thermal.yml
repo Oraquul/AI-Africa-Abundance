@@ -1,0 +1,12 @@
+id: housing-passive-thermal
+name: Passive thermal performance in humid tropical and hot arid conditions
+domain: Housing and built environment
+layer: benchmark
+feedback_loop_speed: Minutes–hours
+status: proposed
+leads: []
+working_group: null
+milestones: []
+evidence: []
+dataset_licence: Unassigned
+paper_section: Annex A

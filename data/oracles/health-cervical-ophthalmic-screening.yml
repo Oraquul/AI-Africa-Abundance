@@ -1,0 +1,12 @@
+id: health-cervical-ophthalmic-screening
+name: Cervical and ophthalmic screening from point-of-care imaging
+domain: Health
+layer: benchmark
+feedback_loop_speed: Seconds
+status: proposed
+leads: []
+working_group: null
+milestones: []
+evidence: []
+dataset_licence: Unassigned
+paper_section: Annex A

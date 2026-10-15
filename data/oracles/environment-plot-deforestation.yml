@@ -1,0 +1,12 @@
+id: environment-plot-deforestation
+name: Deforestation and land use change detection at smallholder plot resolution
+domain: Environment
+layer: benchmark
+feedback_loop_speed: Days–weeks
+status: proposed
+leads: []
+working_group: null
+milestones: []
+evidence: []
+dataset_licence: Unassigned
+paper_section: Annex A

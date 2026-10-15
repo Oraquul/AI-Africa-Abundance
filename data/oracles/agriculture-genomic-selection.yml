@@ -1,0 +1,12 @@
+id: agriculture-genomic-selection
+name: Genomic selection for cassava, sorghum, millet, cowpea, teff and yam
+domain: Agriculture
+layer: benchmark
+feedback_loop_speed: Fast in silico; field validation remains seasonal (section 20.1)
+status: proposed
+leads: []
+working_group: null
+milestones: []
+evidence: []
+dataset_licence: Unassigned
+paper_section: Annex A

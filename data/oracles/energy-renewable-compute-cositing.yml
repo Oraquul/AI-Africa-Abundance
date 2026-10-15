@@ -1,0 +1,12 @@
+id: energy-renewable-compute-cositing
+name: Renewable generation and compute load co-siting
+domain: Energy
+layer: benchmark
+feedback_loop_speed: Minutes–days
+status: proposed
+leads: []
+working_group: null
+milestones: []
+evidence: []
+dataset_licence: Unassigned
+paper_section: Annex A

@@ -1,0 +1,12 @@
+id: agriculture-price-forecasting
+name: Market price forecasting for staple and export commodities
+domain: Agriculture
+layer: benchmark
+feedback_loop_speed: Daily (section 20.1)
+status: proposed
+leads: []
+working_group: null
+milestones: []
+evidence: []
+dataset_licence: Unassigned
+paper_section: Annex A

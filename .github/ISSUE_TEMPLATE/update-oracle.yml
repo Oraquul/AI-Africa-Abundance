@@ -1,0 +1,59 @@
+name: Update an oracle status
+description: Record a real change of status, lead, milestone, or evidence for an oracle that is already in the tracker.
+title: "Status update: "
+labels: ["oracle"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Statuses are proposed, specified, data-sourcing, prototype, published, leaderboard-live, and retired. Do not move an oracle forward without something a reader can open. Do not add a person's name unless they have agreed to be credited.
+  - type: input
+    id: oracle_id
+    attributes:
+      label: Oracle identifier
+      description: The id in data/oracles/, for example agriculture-irrigation-scheduling.
+    validations:
+      required: true
+  - type: dropdown
+    id: status
+    attributes:
+      label: Proposed status
+      options:
+        - proposed
+        - specified
+        - data-sourcing
+        - prototype
+        - published
+        - leaderboard-live
+        - retired
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence links
+      description: Links to a specification, dataset, repository, paper, or leaderboard. Include a date if you know it.
+    validations:
+      required: true
+  - type: input
+    id: milestone
+    attributes:
+      label: Milestone
+      description: Optional. A date (YYYY-MM-DD) and what happened. Leave blank if you do not have a date you can point to.
+    validations:
+      required: false
+  - type: textarea
+    id: leads
+    attributes:
+      label: Leads or working group
+      description: Optional. Names only where each person has opted in.
+    validations:
+      required: false
+  - type: checkboxes
+    id: credit
+    attributes:
+      label: Credit
+      description: Contributors are credited only if they opt in.
+      options:
+        - label: I opt in to being credited by name if this update is accepted.
+          required: false

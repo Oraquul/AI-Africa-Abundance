@@ -1,0 +1,13 @@
+{% extends "base.html.j2" %}
+{% block main %}
+<p class="kicker"><a href="{{ url('/research/') }}">Research</a> · {{ note.status }}</p>
+<h1>{{ note.title }}</h1>
+<p class="meta">
+  Status: {{ note.status }}
+  {% if note.public_author %} · {{ note.public_author }}{% else %} · No byline (credit is opt-in){% endif %}
+  {% if note.paper_section %} · {{ note.paper_section }}{% endif %}
+</p>
+<article class="prose">
+  {{ note.html }}
+</article>
+{% endblock %}

@@ -1,0 +1,13 @@
+id: infra-freight-trade-digital-twin
+name: Freight and trade digital twin
+domain: Logistics and trade
+layer: simulator
+feedback_loop_speed: Seconds–minutes (section 18). Section 19.1 describes a calibrated
+  simulator scoring in milliseconds.
+status: proposed
+leads: []
+working_group: null
+milestones: []
+evidence: []
+dataset_licence: Unassigned
+paper_section: Sections 19.1 and 31

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://oraquul.github.io/AI-Africa-Abundance/sitemap.xml

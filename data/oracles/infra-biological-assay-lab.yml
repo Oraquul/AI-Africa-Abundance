@@ -1,0 +1,13 @@
+id: infra-biological-assay-lab
+name: Biological and diagnostic assay laboratory
+domain: Health
+layer: lab
+feedback_loop_speed: 'Therapeutics: months–years (assay, then trial, section 18).
+  Diagnostic assay latency is not stated.'
+status: proposed
+leads: []
+working_group: null
+milestones: []
+evidence: []
+dataset_licence: Unassigned
+paper_section: Sections 22 and 31

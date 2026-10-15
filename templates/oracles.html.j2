@@ -1,0 +1,74 @@
+{% extends "base.html.j2" %}
+{% block main %}
+<p class="kicker">Tracker</p>
+<h1>Oracles</h1>
+<div class="prose">
+  <p>An oracle scores a proposed solution without a person in the loop. The paper’s definition is in <a href="{{ url('/paper/17/') }}">section 17</a>. These records are the benchmark families in <a href="{{ url('/paper/annex-a/') }}">Annex A</a>, plus the infrastructure the paper names in <a href="{{ url('/paper/22/') }}">sections 22</a> and <a href="{{ url('/paper/31/') }}">31</a>.</p>
+  <p>Status moves only when a contributor changes the file and points to evidence. Leads are named only if they opt in. Where the paper gives no loop time, the field says so.</p>
+</div>
+<p class="status-live" data-oracle-count aria-live="polite">{{ oracles | length }} oracles.</p>
+<form class="filters" data-oracle-filters action="{{ url('/oracles/') }}" method="get">
+  <div>
+    <label for="q">Search</label>
+    <input id="q" name="q" type="search" autocomplete="off">
+  </div>
+  <div>
+    <label for="domain">Domain</label>
+    <select id="domain" name="domain">
+      <option value="">All domains</option>
+      {% for domain in domains %}
+      <option>{{ domain }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div>
+    <label for="status">Status</label>
+    <select id="status" name="status">
+      <option value="">All statuses</option>
+      {% for status in statuses %}
+      <option value="{{ status }}">{{ status_label[status] }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div>
+    <label for="layer">Form</label>
+    <select id="layer" name="layer">
+      <option value="">All forms</option>
+      {% for layer in layers %}
+      <option value="{{ layer }}">{{ layer_label[layer] }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <button type="submit">Apply filters</button>
+</form>
+<p class="meta">On a small screen, scroll the table sideways. Each name opens a page with every field.</p>
+<div class="table-wrap">
+  <table class="oracle-table">
+    <caption>Oracle tracker</caption>
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Domain</th>
+        <th scope="col">Form</th>
+        <th scope="col">Feedback-loop speed</th>
+        <th scope="col">Status</th>
+        <th scope="col">Paper</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for oracle in oracles %}
+      <tr data-oracle-row data-domain="{{ oracle.domain }}" data-status="{{ oracle.status }}" data-layer="{{ oracle.layer }}" data-search="{{ oracle.name }} {{ oracle.domain }} {{ oracle.id }} {{ oracle.paper_section }}">
+        <th scope="row"><a href="{{ url('/oracles/' ~ oracle.id ~ '/') }}">{{ oracle.name }}</a></th>
+        <td>{{ oracle.domain }}</td>
+        <td>{{ oracle.layer_label }}</td>
+        <td>{{ oracle.feedback_loop_speed }}</td>
+        <td>{{ oracle.status_label }}</td>
+        <td>{{ oracle.paper_section }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<p class="empty" data-oracle-empty hidden>No oracles match these filters.</p>
+<p class="plain-links">Machine-readable copy: <a href="{{ url('/oracles/oracles.json') }}">oracles.json</a>. Schema: <a href="{{ repo }}/blob/main/data/schema/oracle.schema.json">oracle.schema.json</a>. <a href="{{ url('/contribute/') }}">Propose an oracle</a>.</p>
+{% endblock %}

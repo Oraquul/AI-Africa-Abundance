@@ -1,0 +1,55 @@
+name: Submit research
+description: Offer a concept note, preprint, dataset record, or reading note.
+title: "Research: "
+labels: ["research"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Planned notes stay marked planned until there is a text to read. Do not send confidential material. Text accepted for the site is published under CC BY 4.0 unless the submission says otherwise and the editor agrees.
+  - type: input
+    id: title
+    attributes:
+      label: Title
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind
+      options:
+        - Concept note
+        - Preprint
+        - Dataset
+        - Reading note
+    validations:
+      required: true
+  - type: input
+    id: paper_section
+    attributes:
+      label: Paper section
+      description: Which part of the white paper this depends on.
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Link
+      description: Optional. A public URL if the work is already online.
+    validations:
+      required: false
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Terms
+      options:
+        - label: I am free to share this, and I agree that text accepted for the site may be published under CC BY 4.0.
+          required: true
+        - label: I opt in to being credited by name if this is accepted.
+          required: false

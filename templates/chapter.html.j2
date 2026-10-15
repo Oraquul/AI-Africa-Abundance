@@ -1,0 +1,36 @@
+{% extends "base.html.j2" %}
+{% block main %}
+<p class="kicker"><a href="{{ url('/paper/') }}">White paper</a> · {{ section.part }}</p>
+<div class="section-head">
+  <h1 id="chapter-title">{{ section.heading }}</h1>
+  <a class="correction" href="{{ section.correction }}">Suggest a correction<span class="visually-hidden"> to {{ section.heading }}</span></a>
+</div>
+<p class="plain-links meta"><a href="{{ url('/paper/the-oracle-and-the-partner-v3.1.pdf') }}">Download the full PDF</a> · <a href="{{ url('/paper/versions/') }}">Version history</a></p>
+{% if section.toc %}
+<nav aria-label="On this page">
+  <h2>On this page</h2>
+  <ul>
+    {% for item in section.toc %}
+    <li{% if item.level == 3 %} style="margin-left: 1rem"{% endif %}><a href="#{{ item.id }}">{{ item.text }}</a></li>
+    {% endfor %}
+  </ul>
+</nav>
+{% endif %}
+<article class="prose">
+  {{ section.html }}
+</article>
+<aside class="citation">
+  <h2>Citation</h2>
+  <p>Itegbe, Benedict. 2026. <em>The Oracle and the Partner: Africa’s Path to an Age of Abundance.</em> Version 3.1, July 2026. {{ section.heading }}. AI Africa Abundance. <a href="{{ absurl('/paper/' ~ section.slug ~ '/') }}">{{ absurl('/paper/' ~ section.slug ~ '/') }}</a>. Text licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
+</aside>
+<nav class="pager" aria-label="Chapter">
+  {% if previous_section %}
+  <a href="{{ url('/paper/' ~ previous_section.slug ~ '/') }}">Previous: {{ previous_section.heading }}</a>
+  {% else %}
+  <span></span>
+  {% endif %}
+  {% if next_section %}
+  <a href="{{ url('/paper/' ~ next_section.slug ~ '/') }}">Next: {{ next_section.heading }}</a>
+  {% endif %}
+</nav>
+{% endblock %}

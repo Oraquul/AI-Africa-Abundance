@@ -1,0 +1,27 @@
+{% extends "base.html.j2" %}
+{% block main %}
+<p class="kicker">Log</p>
+<h1>Progress</h1>
+<div class="prose">
+  <p>Dated notes on what has actually been published. Each entry has a short summary, a link, and ready-to-copy text for X and LinkedIn. The site does not post those notes anywhere. <a href="{{ url('/share/') }}">Copy them on the share page</a>.</p>
+  <p><a href="{{ url('/feed.xml') }}">RSS feed</a></p>
+</div>
+{% if entries %}
+<ul class="entry-list">
+  {% for entry in entries %}
+  <li>
+    <article id="{{ entry.slug }}">
+      <h2>{{ entry.title }}</h2>
+      <p class="meta"><time datetime="{{ entry.date }}">{{ entry.date }}</time></p>
+      <p>{{ entry.summary }}</p>
+      <p class="plain-links"><a href="{{ entry.link }}">{{ entry.link }}</a></p>
+      {{ entry.html }}
+      <p class="plain-links"><a href="{{ url('/share/') }}#{{ entry.slug }}">Copy the X and LinkedIn text</a></p>
+    </article>
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>No progress entries yet.</p>
+{% endif %}
+{% endblock %}

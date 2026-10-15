@@ -1,0 +1,41 @@
+{% extends "base.html.j2" %}
+{% block main %}
+<p class="kicker">Essays</p>
+<h1>Blog</h1>
+<div class="prose">
+  <p>Essays are Markdown files in the repository. A byline appears only when the author opts in. The companion blog is the <a href="https://oraquul.github.io/Public-service-ai-observatory/">Public Service AI Observatory</a>.</p>
+</div>
+{% if posts %}
+<ul class="entry-list">
+  {% for post in posts %}
+  <li>
+    <article>
+      <h2><a href="{{ url('/blog/' ~ post.slug ~ '/') }}">{{ post.title }}</a></h2>
+      <p class="meta"><time datetime="{{ post.date }}">{{ post.date }}</time>{% if post.public_author %} · <a href="{{ url('/blog/authors/' ~ post.author_slug ~ '/') }}">{{ post.public_author }}</a>{% endif %}</p>
+      <p>{{ post.summary }}</p>
+    </article>
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>No essays have been published.</p>
+{% endif %}
+
+<section class="prose" aria-labelledby="planned-heading">
+  <h2 id="planned-heading">Not yet published</h2>
+  <p>These titles follow the paper’s own structure. They are not written, and they are not on a timetable. An essay appears in the list above only when its file is added.</p>
+  <ol>
+    <li>Why Africa should not build national foundation models — <a href="{{ url('/paper/3/') }}">section 3</a></li>
+    <li>Why open source will transform Africa — <a href="{{ url('/paper/13/') }}">section 13</a></li>
+    <li>The future of digital public infrastructure — <a href="{{ url('/paper/9/') }}">section 9</a></li>
+    <li>Africa’s AI industrial policy — <a href="{{ url('/paper/24/') }}">sections 24</a> and <a href="{{ url('/paper/25/') }}">25</a></li>
+    <li>AI for agriculture — <a href="{{ url('/paper/20/') }}">section 20</a></li>
+    <li>Standards influence — <a href="{{ url('/paper/28/') }}">section 28</a></li>
+    <li>AI and the AfCFTA — <a href="{{ url('/paper/15/') }}">sections 15</a> and <a href="{{ url('/paper/23/') }}">23</a></li>
+    <li>The economics of open weights — <a href="{{ url('/paper/13/') }}">sections 13</a> and <a href="{{ url('/paper/14/') }}">14</a></li>
+    <li>Data sovereignty — <a href="{{ url('/paper/15/') }}">section 15</a></li>
+    <li>The benchmark economy — <a href="{{ url('/paper/17/') }}">sections 17</a> and <a href="{{ url('/paper/22/') }}">22</a></li>
+  </ol>
+  <p><a href="{{ url('/contribute/#blog') }}">Pitch an essay</a>. The file template is <a href="{{ repo }}/blob/main/content/blog/_template.md">content/blog/_template.md</a>.</p>
+</section>
+{% endblock %}

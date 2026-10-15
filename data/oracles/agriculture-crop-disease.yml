@@ -1,0 +1,12 @@
+id: agriculture-crop-disease
+name: Crop disease identification across priority African staples
+domain: Agriculture
+layer: benchmark
+feedback_loop_speed: Fast, image identification (section 20.1)
+status: proposed
+leads: []
+working_group: null
+milestones: []
+evidence: []
+dataset_licence: Unassigned
+paper_section: Annex A

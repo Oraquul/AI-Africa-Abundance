@@ -1,0 +1,12 @@
+id: logistics-port-call-berth-allocation
+name: Port call sequencing and berth allocation
+domain: Logistics and trade
+layer: benchmark
+feedback_loop_speed: Seconds–minutes
+status: proposed
+leads: []
+working_group: null
+milestones: []
+evidence: []
+dataset_licence: Unassigned
+paper_section: Annex A

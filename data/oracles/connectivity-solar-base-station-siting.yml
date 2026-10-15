@@ -1,0 +1,12 @@
+id: connectivity-solar-base-station-siting
+name: Base station siting with solar generation and storage co-optimisation
+domain: Connectivity
+layer: benchmark
+feedback_loop_speed: Minutes–hours
+status: proposed
+leads: []
+working_group: null
+milestones: []
+evidence: []
+dataset_licence: Unassigned
+paper_section: Annex A

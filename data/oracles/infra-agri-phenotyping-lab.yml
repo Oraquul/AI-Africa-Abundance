@@ -1,0 +1,13 @@
+id: infra-agri-phenotyping-lab
+name: Agricultural phenotyping and soils laboratory
+domain: Agriculture
+layer: lab
+feedback_loop_speed: Described as the fast in-lab complement to the field network
+  (section 22); no numeric latency is stated.
+status: proposed
+leads: []
+working_group: null
+milestones: []
+evidence: []
+dataset_licence: Unassigned
+paper_section: Sections 22 and 31

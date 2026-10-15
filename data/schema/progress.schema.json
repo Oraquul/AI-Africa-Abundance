@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://oraquul.github.io/AI-Africa-Abundance/schema/progress.schema.json",
+  "title": "Progress entry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["title", "date", "summary", "link", "x", "linkedin"],
+  "properties": {
+    "title": { "type": "string", "minLength": 3 },
+    "date": { "type": "string", "format": "date" },
+    "summary": { "type": "string", "minLength": 10 },
+    "link": { "type": "string", "minLength": 8 },
+    "x": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 280,
+      "description": "Ready-to-copy text for X. 280 characters or fewer, counting every character."
+    },
+    "linkedin": { "type": "string", "minLength": 1 }
+  }
+}

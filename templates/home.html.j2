@@ -1,0 +1,102 @@
+{% extends "base.html.j2" %}
+{% block main %}
+<p class="kicker">An open record</p>
+<h1>Abundance is an institutional question.</h1>
+<div class="prose">
+  <p class="lede">The scarce thing is no longer a model that only a few laboratories can train. It is a way to tell, quickly and honestly, whether a proposed solution works.</p>
+  <p>That scoring mechanism is what the white paper calls an oracle: a benchmark, a simulator, a dataset, a laboratory, or a field network that can mark a proposal without a person in the loop. The argument of <em>The Oracle and the Partner</em> is that Africa should build those oracles, for problems nobody else will score, rather than train national foundation models. Partners are chosen by what they can transfer. Capital and hardware can be bought. The architecture of the system cannot.</p>
+  <p>This site publishes the paper and keeps a public list of the oracles. The counts below are read from the files in the repository each time the site is built. They are not a claim that any oracle has been constructed.</p>
+</div>
+<div class="actions">
+  <a class="button" href="{{ url('/paper/') }}">Read the white paper</a>
+  <a class="button secondary" href="{{ url('/oracles/') }}">Open the tracker</a>
+  <a class="button secondary" href="{{ url('/contribute/') }}">Contribute</a>
+</div>
+
+<section aria-labelledby="counts-heading">
+  <h2 id="counts-heading">Tracker counts</h2>
+  <p>{{ counts.benchmarks }} entries are benchmark families from Annex A. {{ counts.other }} are other forms named in the paper: simulator, data, laboratory, or field network.{% if counts.all_proposed %} Every entry is proposed. None is recorded as specified, prototyped, published, or live.{% endif %}</p>
+  <div class="count-grid">
+    <div>
+      <div class="table-wrap">
+        <table>
+          <caption>Oracles by status</caption>
+          <thead>
+            <tr><th scope="col">Status</th><th scope="col">Count</th></tr>
+          </thead>
+          <tbody>
+            {% for row in counts.by_status %}
+            <tr>
+              <th scope="row"><a href="{{ url('/oracles/') }}?status={{ row.key }}">{{ row.label }}</a></th>
+              <td>{{ row.count }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+      <div class="table-wrap">
+        <table>
+          <caption>Oracles by domain</caption>
+          <thead>
+            <tr><th scope="col">Domain</th><th scope="col">Count</th></tr>
+          </thead>
+          <tbody>
+            {% for row in counts.by_domain %}
+            <tr>
+              <th scope="row"><a href="{{ url('/oracles/') }}?domain={{ row.key | urlencode }}">{{ row.key }}</a></th>
+              <td>{{ row.count }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="span-2">
+      <div class="table-wrap">
+        <table>
+          <caption>Oracles by form</caption>
+          <thead>
+            <tr><th scope="col">Form</th><th scope="col">Count</th></tr>
+          </thead>
+          <tbody>
+            {% for row in counts.by_layer %}
+            <tr>
+              <th scope="row"><a href="{{ url('/oracles/') }}?layer={{ row.key }}">{{ row.label }}</a></th>
+              <td>{{ row.count }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <p class="plain-links"><a href="{{ url('/oracles/') }}">Filter the full tracker</a></p>
+</section>
+
+<section aria-labelledby="progress-heading">
+  <h2 id="progress-heading">Latest progress</h2>
+  {% if progress %}
+  <ul class="entry-list">
+    {% for entry in progress %}
+    <li>
+      <article>
+        <h3><a href="{{ url('/progress/') }}#{{ entry.slug }}">{{ entry.title }}</a></h3>
+        <p class="meta"><time datetime="{{ entry.date }}">{{ entry.date }}</time></p>
+        <p>{{ entry.summary }}</p>
+      </article>
+    </li>
+    {% endfor %}
+  </ul>
+  <p class="plain-links"><a href="{{ url('/progress/') }}">Progress log</a> · <a href="{{ url('/share/') }}">Copy the public notes</a></p>
+  {% else %}
+  <p>No progress entries have been filed.</p>
+  {% endif %}
+</section>
+
+<aside class="notice">
+  <h2>Independence</h2>
+  <p>This is an independent personal initiative. The views are Benedict Itegbe’s own. They are not official positions of the Nigerian Export Promotion Council or any other institution.</p>
+</aside>
+{% endblock %}

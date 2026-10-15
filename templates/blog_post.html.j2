@@ -1,0 +1,15 @@
+{% extends "base.html.j2" %}
+{% block main %}
+<p class="kicker"><a href="{{ url('/blog/') }}">Blog</a></p>
+<h1>{{ post.title }}</h1>
+<p class="meta"><time datetime="{{ post.date }}">{{ post.date }}</time>
+  {% if post.public_author %}
+  · <a href="{{ url('/blog/authors/' ~ post.author_slug ~ '/') }}">{{ post.public_author }}</a>
+  {% else %}
+  · Contributor not credited (no opt-in)
+  {% endif %}
+</p>
+<article class="prose">
+  {{ post.html }}
+</article>
+{% endblock %}

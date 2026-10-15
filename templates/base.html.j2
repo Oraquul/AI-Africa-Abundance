@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>{{ title }}{% if title != "AI Africa Abundance" %} — AI Africa Abundance{% endif %}</title>
+  <meta name="description" content="{{ description }}">
+  <link rel="canonical" href="{{ absurl(current) }}">
+  <link rel="icon" href="{{ url('/favicon.svg') }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ url('/css/site.css') }}">
+  <link rel="alternate" type="application/rss+xml" title="AI Africa Abundance progress" href="{{ url('/feed.xml') }}">
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:url" content="{{ absurl(current) }}">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div class="brand">
+        <a href="{{ url('/') }}">AI Africa Abundance</a>
+        <p class="tag">The Oracle and the Partner</p>
+      </div>
+      <nav aria-label="Primary">
+        <ul class="nav-list">
+          {% for item in nav %}
+          <li><a href="{{ item.href }}"{% if item.current %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="content" class="wrap">
+    {% block main %}{% endblock %}
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>An independent personal initiative of Benedict Itegbe. Views are his own and are not official positions of the Nigerian Export Promotion Council or any other institution.</p>
+      <p>Text and data: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Code: <a href="{{ repo }}/blob/main/LICENSE">MIT</a>.</p>
+      <ul class="footer-links">
+        <li><a href="{{ url('/paper/') }}">White paper</a></li>
+        <li><a href="{{ url('/oracles/') }}">Oracle tracker</a></li>
+        <li><a href="{{ url('/feed.xml') }}">Progress RSS</a></li>
+        <li><a href="https://oraquul.github.io/Public-service-ai-observatory/">Public Service AI Observatory</a></li>
+        <li><a href="{{ repo }}">Repository</a></li>
+        <li><a href="{{ url('/conduct/') }}">Code of conduct</a></li>
+        <li><a href="{{ url('/about/#contact') }}">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+  <script src="{{ url('/js/site.js') }}"></script>
+</body>
+</html>
